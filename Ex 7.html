@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>array</title>
+<script language="JavaScript">
+    subjects=new Array("русский язык","литература", "история", "физика",
+"математика","химия","информатика");
+exact=new Array();
+exact=subjects.slice(3,7);
+hum=new Array();     
+hum=subjects.slice(0,3);
+function first(){
+    document.write(hum+"<br>");
+}
+function second() {
+    document.write(exact+"<br>");
+}
+</script>
+</head>
+<body>
+    <script language="JavaScript">
+second();
+first();
+</script>
+</body>
+</html>
