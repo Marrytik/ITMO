@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Exercise 14</title>
+    <script language="JavaScript">
+        
+        function doSend(){
+        var v=document.user.e.value.indexOf("@",1)
+        if(document.user.n.value==""){
+        alert('Пожалуйста, введите имя')
+        document.user.n.focus()
+        }
+        if(document.user.p.value==""){
+        alert('Вы должны ввести пароль')
+        document.user.p.focus()
+        }
+        if(document.user.p2.value==""){
+        alert('Вы должны подтвердить пароль')
+        document.user.p2.focus() 
+        }
+        if(document.getElementById('pas1') === document.getElementById('pas2')) { 
+        return true;
+        document.user.p2.focus() 
+        }
+        else { 
+        alert('Пароли не совпадают');
+        document.user.p2.focus() 
+        }
+    
+        if(document.user.message.value==""){
+        alert('Сообщение должно содержать больше 10 символов')
+        document.user.message.focus()
+        }
+        if(document.user.e.value==""){
+        alert('Вы должны ввести e-mail')
+        document.user.e.focus()
+        }
+        if(v==-1){
+        alert('Адрес e-mail указан неверно')
+        document.user.e.select()
+        document.user.e.focus()
+        }
+        else
+        document.user.submit()
+        }          
+        </script>
+</head>
+<body>
+    <form name="user">
+    <p>Ваше имя* :  <input type="text" name="n" size="40"></p><br>
+    <p>Пароль* :  <input type="password" id="pas1" name="p" minlength="4" size="40"></p><br>
+    <p>Подтверждение пароля* :  <input type="password" id="pas2" name="p2" minlength="4" size="40"></p><br>
+    <p>Электронный адрес* :  <input type="email" name="e" id="email" size="40"></p><br>
+    <div id="error"></div>
+    <p>Тема сообщения:  <input type="text" name="tm" size="40"></p><br>
+    <p>Сообщение: <textarea name="message" minlength="10" cols="40" rows="3"></textarea></p>
+    <p><input type="submit" value="Отправить" onClick="doSend()">
+     <input type="reset" value="Очистить"></p><br>
+    <p>* - необходимые для заполнения поля</p>
+   </form>
+</body>
+</html>
